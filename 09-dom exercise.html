@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM EXERCISE</title>
+    <style></style>
+  </head>
+  <body>
+    <button
+      onclick=" choicemade('heads')
+      "
+      class="btn-heads"
+    >
+      heads
+    </button>
+    <button
+      onclick="choicemade('tails')
+    "
+      class="btn-tails"
+    >
+      tails
+    </button>
+    <p class="pchoice">You chose:</p>
+
+    <script>
+      function choicemade(choice) {
+        if (choice === "heads") {
+          return (document.querySelector(".pchoice").innerHTML =
+            "You chose: Heads");
+        } else choice === "tails";
+        {
+          return (document.querySelector(".pchoice").innerHTML =
+            "You chose: Tails");
+        }
+      }
+
+      //console.log(document.querySelector("button").innerHTML);
+      //document.querySelector(".btn-9b").innerHTML = "9b done";
+      //document.querySelector("button").innerHTML = "changed";
+      //console.log(document.querySelector(".btn-heads").innerHTML);
+      //document.body.innerHTML = "Let him cook";
+      /* document.title = "g day";
+      console.log(typeof document.body);
+      console.log(document.body.innerHTML);*/
+      // document.body.innerHTML = "<button>good job</button>";
+    </script>
+  </body>
+</html>

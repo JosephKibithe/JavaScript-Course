@@ -1,0 +1,9 @@
+<input type="text" onkeyup="showValue()" placeholder="Type something" />
+<p id="output"></p>
+
+<script>
+  function showValue() {
+    let inputValue = document.querySelector("input").value;
+    document.getElementById("output").innerHTML = `You typed: ${inputValue}`;
+  }
+</script>
