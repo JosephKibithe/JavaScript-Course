@@ -9,12 +9,13 @@ V2
 Loops= run code over and over
 */
 
-const todoList = ["clap", "sing"]; //epmty array
+const todoList = []; //epmty array
+
 function renderTodoList() {
   let todolistHtml = "";
   for (let i = 0; i < todoList.length; i++) {
     const todo = todoList[i];
-    const html = `<p>${todo}<p>`;
+    const html = `<p>${todo}</p>`;
     todolistHtml += html;
   }
   console.log(todolistHtml);
@@ -24,8 +25,17 @@ function addTodo() {
   const inputElements = document.querySelector(".input-elem");
   const InputName = inputElements.value;
 
-  todoList.push(InputName);
-  console.log(todoList);
-  inputElements.value = "";
-  renderTodoList();
+  if (inputName.trim() !== "") {
+    // Avoid empty entries
+    todoList.push(InputName);
+    console.log(todoList);
+    inputElements.value = "";
+    renderTodoList();
+  }
+}
+function handleCostKey(event) {
+  if (event.key === "Enter") console.log(event.key);
+  {
+    addTodo();
+  }
 }
