@@ -6,14 +6,13 @@
     <style>
       .btn {
         background-color: rgb(255, 216, 20);
-
         border-radius: 5px;
         border: none;
         padding: 5px 30px;
         margin-left: 20px;
         cursor: pointer;
       }
-      .schedule-btn {
+      .is-toggled {
         background-color: gray;
         border-radius: 5px;
         border: none;
@@ -24,11 +23,14 @@
     </style>
   </head>
   <body>
-    <button class="btn">Request now</button>
-    <button class="schedule-btn">Schedule for Later</button>
+    <button onclick="isToggled()" class="btn is-toggled">Gaming</button>
     <script>
-      const buttonCheck = document.querySelector(".btn");
-      console.log(buttonCheck.classList.contains("btn"));
+      function isToggled() {
+        const btnToggled = document.querySelector(".btn");
+        if (!btnToggled.classList.contains("is-toggled"))
+          btnToggled.classList.add("is-toggled");
+        else btnToggled.classList.remove("is-toggled");
+      }
     </script>
   </body>
 </html>
