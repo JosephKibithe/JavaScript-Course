@@ -23,13 +23,14 @@
     </style>
   </head>
   <body>
-    <button onclick="isToggled()" class="btn is-toggled">Gaming</button>
+    <button onclick="isToggled(this)" class="btn is-toggled">Gaming</button>
+    <button onclick="isToggled(this)" class="btn is-toggled">Music</button>
+    <button onclick="isToggled(this)" class="btn is-toggled">Tech</button>
     <script>
-      function isToggled() {
-        const btnToggled = document.querySelector(".btn");
-        if (!btnToggled.classList.contains("is-toggled"))
-          btnToggled.classList.add("is-toggled");
-        else btnToggled.classList.remove("is-toggled");
+      function isToggled(button) {
+        if (!button.classList.contains("is-toggled"))
+          button.classList.add("is-toggled");
+        else button.classList.remove("is-toggled");
       }
     </script>
   </body>
