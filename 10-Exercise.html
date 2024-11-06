@@ -5,7 +5,7 @@
 
     <style>
       .btn {
-        background-color: rgb(255, 216, 20);
+        background-color: rgb(255, 255, 255);
         border-radius: 5px;
         border: none;
         padding: 5px 30px;
@@ -13,24 +13,35 @@
         cursor: pointer;
       }
       .is-toggled {
-        background-color: gray;
-        border-radius: 5px;
-        border: none;
-        padding: 5px 30px;
-        margin-left: 20px;
-        cursor: pointer;
+        background-color: rgb(133, 133, 133);
       }
     </style>
   </head>
   <body>
-    <button onclick="isToggled(this)" class="btn is-toggled">Gaming</button>
-    <button onclick="isToggled(this)" class="btn is-toggled">Music</button>
-    <button onclick="isToggled(this)" class="btn is-toggled">Tech</button>
+    <button onclick="isToggled('#gaming-btn')" id="gaming-btn" class="btn">
+      Gaming
+    </button>
+    <button onclick="isToggled('#music-btn')" id="music-btn" class="btn">
+      Music
+    </button>
+    <button onclick="isToggled('#tech-btn')" id="tech-btn" class="btn">
+      Tech
+    </button>
     <script>
-      function isToggled(button) {
-        if (!button.classList.contains("is-toggled"))
+      function isToggled(selector) {
+        const button = document.querySelector(selector);
+        if (!button.classList.contains("is-toggled")) {
+          notToggled();
           button.classList.add("is-toggled");
-        else button.classList.remove("is-toggled");
+        } else {
+          button.classList.remove("is-toggled");
+        }
+      }
+      function notToggled() {
+        const previousbtn = document.querySelector(".is-toggled");
+        if (previousbtn) {
+          previousbtn.classList.remove("is-toggled");
+        }
       }
     </script>
   </body>
