@@ -1,62 +1,217 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>DOM</title>
-    <style></style>
-  </head>
+  <head></head>
+  <style>
+    body {
+      background-color: black;
+    }
+    .mainbtn {
+      color: aliceblue;
+      size: 50px;
+      background-color: #313131;
+      width: 65px;
+      height: 65px;
+      border-radius: 60px;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+  </style>
   <body>
-    <p>Youtube Subscribe Button</p>
-    <button
-      onclick=" subscribe();
-    "
-      class="js-sub"
-    >
-      Subscribe
-    </button>
-    <p>Amazon Shipping Calculator</p>
-    <p>Orders under $40 = +$10 shipping.</p>
-    <p>Orders over $40 = FREE shipping.</p>
+    <!-- Create an element to display the calculation. -->
+    <p class="js-calculation"></p>
 
-    <input
-      placeholder="Cost of order"
-      class="input-el"
-      onkeydown=" handleCostKey(event)
+    <p>
+      <button
+        class="mainbtn"
+        onclick="
+        updateCalculation('1');
       "
-    />
-    <button onclick="calculation()">Calculate</button>
-    <p class="js-total-cost"></p>
-    <script>
-      function handleCostKey(event) {
-        console.log(event.key);
-        if (event.key === "Enter");
-        {
-          calculation();
-        }
-      }
-      function calculation() {
-        const inputElem = document.querySelector(".input-el");
-        let costValue = Number(inputElem.value);
-        const textColor = document.querySelector(".js-total-cost");
-        if (costValue < 40 && costValue > 0) {
-          costValue = costValue + 10;
-        } else {
-          costValue;
-        }
-        textColor.innerHTML = `$${costValue}`;
-        textColor.style.color = "black";
+      >
+        1
+      </button>
 
-        if (costValue < 0) {
-          textColor.innerHTML = `Error: cost cannot be less than $0`;
-          textColor.style.color = "red";
-        }
+      <button
+        class="mainbtn"
+        onclick="
+        updateCalculation('2');
+      "
+      >
+        2
+      </button>
+
+      <button
+        class="mainbtn"
+        onclick="
+        updateCalculation('3');
+      "
+      >
+        3
+      </button>
+
+      <button
+        onclick="
+        updateCalculation(' + ');
+      "
+      >
+        +
+      </button>
+    </p>
+
+    <p>
+      <button
+        class="mainbtn"
+        onclick="
+        updateCalculation('4');
+      "
+      >
+        4
+      </button>
+
+      <button
+        class="mainbtn"
+        onclick="
+        updateCalculation('5');
+      "
+      >
+        5
+      </button>
+
+      <button
+        class="mainbtn"
+        onclick="
+        updateCalculation('6');
+      "
+      >
+        6
+      </button>
+
+      <button
+        onclick="
+        updateCalculation(' - ');
+      "
+      >
+        -
+      </button>
+    </p>
+
+    <p>
+      <button
+        class="mainbtn"
+        onclick="
+        updateCalculation('7');
+      "
+      >
+        7
+      </button>
+
+      <button
+        class="mainbtn"
+        onclick="
+        updateCalculation('8');
+      "
+      >
+        8
+      </button>
+
+      <button
+        class="mainbtn"
+        onclick="
+        updateCalculation('9');
+      "
+      >
+        9
+      </button>
+
+      <button
+        onclick="
+        updateCalculation(' * ');
+      "
+      >
+        *
+      </button>
+    </p>
+
+    <p>
+      <button
+        class="mainbtn"
+        onclick="
+        updateCalculation('0');
+      "
+      >
+        0
+      </button>
+
+      <button
+        class="mainbtn"
+        onclick="
+        updateCalculation('.');
+      "
+      >
+        .
+      </button>
+
+      <button
+        class="mainbtn"
+        onclick="
+        // Note: eval() takes a string and runs it as code.
+        // Avoid using eval() in real world projects since
+        // it can potentially be given harmful code to run.
+        // Only use eval() for learning purposes.
+        calculation = eval(calculation);
+
+        // Display the calculation on the page
+        // instead of console.log
+        displayCalculation();
+
+        localStorage.setItem('calculation', calculation);
+      "
+      >
+        =
+      </button>
+
+      <button
+        onclick="
+        updateCalculation(' / ');
+      "
+      >
+        /
+      </button>
+    </p>
+
+    <p>
+      <button
+        onclick="
+        calculation = '';
+
+        // Display the calculation on the page
+        // instead of console.log
+        displayCalculation();
+
+        localStorage.setItem('calculation', calculation);
+      "
+      >
+        Clear
+      </button>
+    </p>
+
+    <script>
+      let calculation = localStorage.getItem("calculation") || "";
+
+      // Display the calculation when the page first loads.
+      displayCalculation();
+
+      function updateCalculation(value) {
+        calculation += value;
+
+        // Display the calculation on the page
+        // instead of console.log
+        displayCalculation();
+
+        localStorage.setItem("calculation", calculation);
       }
-      function subscribe() {
-        const btnElement = document.querySelector(".js-sub");
-        if (btnElement.innerHTML === "Subscribe") {
-          btnElement.innerHTML = "Subscribed";
-        } else {
-          btnElement.innerHTML = "Subscribe";
-        }
+
+      function displayCalculation() {
+        document.querySelector(".js-calculation").innerHTML = calculation;
       }
     </script>
   </body>
