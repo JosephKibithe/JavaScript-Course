@@ -1,41 +1,41 @@
-/*
-create array to store todos
-when we click add
-get text from textbox
-add it to array
-console.log the array
+const todoList = [];
 
-V2
-Loops= run code over and over
-*/
-
-const todoList = []; //epmty array
+renderTodoList();
 
 function renderTodoList() {
-  let todolistHtml = "";
-  for (let i = 0; i < todoList.length; i++) {
-    const todo = todoList[i];
-    const html = `<p>${todo}</p>`;
-    todolistHtml += html;
-  }
-  console.log(todolistHtml);
-  document.querySelector(".js-todo-list").innerHTML = todolistHtml;
-}
-function addTodo() {
-  const inputElements = document.querySelector(".input-elem");
-  const InputName = inputElements.value;
+  let todoListHTML = "";
 
-  if (inputName.trim() !== "") {
-    // Avoid empty entries
-    todoList.push(InputName);
-    console.log(todoList);
-    inputElements.value = "";
-    renderTodoList();
+  for (let i = 0; i < todoList.length; i++) {
+    const todoObject = todoList[i];
+    //const name = todoObject.name;
+    //const dueDate = todoObject.dueDate;
+    // const { name, dueDate } = todoObject;
+    const todo = todoList[i];
+    const html = `
+      <p>${todo}</p>
+      <button>Delete</button> 
+    `;
+    todoListHTML += html;
   }
+
+  document.querySelector(".js-todo-list").innerHTML = todoListHTML;
 }
-function handleCostKey(event) {
-  if (event.key === "Enter") console.log(event.key);
-  {
-    addTodo();
-  }
+
+function addTodo() {
+  const inputElement = document.querySelector(".js-name-input");
+  const name = inputElement.value;
+
+  const dateInputElement = document.querySelector(".js-due-date-input");
+  const dueDate = dateInputElement.value;
+
+  todoList.push({
+    //name: name,
+    //dueDate: dueDate,
+    name,
+    dueDate,
+  });
+
+  inputElement.value = "";
+
+  renderTodoList();
 }
