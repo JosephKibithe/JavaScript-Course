@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Arrays and Loops</title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+      /* function getLastValue(array) {
+          if (array.length === 0) return null;
+          const lastArray = array.length - 1;
+          return array[lastArray];
+        }
+        console.log(getLastValue([33, 34, 231]));
+        //const nums = [10, 20, 30];
+        // nums[2] = 99;
+        //console.log(nums);*/
+      function arraySwap(array) {
+        const firstArr = array[0];
+        const lasttArr = array[array.length - 1];
+
+        array[0] = lasttArr;
+        array[array.length - 1] = firstArr;
+        return array;
+      }
+      console.log(arraySwap([33, 34, 231]));
+    </script>
+  </body>
+</html>
