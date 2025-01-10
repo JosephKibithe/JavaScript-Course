@@ -11,12 +11,16 @@
         console.log(i);
         i = i + 2;
       }*/
-      let arr = [1, 2, 3, 4, 5];
-      let incrArr = [];
-      for (let i = 0; i < arr.length; i++) {
-        incrArr[i] = arr[i] + 1;
+      function addOne(arr) {
+        //let arr = [];
+        let incrArr = [];
+        for (let i = 0; i < arr.length; i++) {
+          incrArr[i] = arr[i] + 1;
+        }
+        return incrArr;
       }
-      console.log(incrArr);
+      const result = addOne([1, -8, 3, 4]);
+      console.log(result);
       /*
           if (array.length === 0) return null;
           const lastArray = array.length - 1;
