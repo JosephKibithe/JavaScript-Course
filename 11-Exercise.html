@@ -11,16 +11,22 @@
         console.log(i);
         i = i + 2;
       }*/
-      function addOne(arr) {
+      function minMax(arr) {
         //let arr = [];
-        let incrArr = [];
+        let minArr = arr[0];
+        let maxArr = arr[0];
         for (let i = 0; i < arr.length; i++) {
-          incrArr[i] = arr[i] + 1;
+          if (arr[i] < minArr) {
+            minArr = arr[i];
+          }
+          if (arr[i] > maxArr) {
+            maxArr = arr[i];
+          }
         }
-        return incrArr;
+        return { minArr, maxArr };
       }
-      const result = addOne([1, -8, 3, 4]);
-      console.log(result);
+      const result = minMax([1, 9, 3, 4]);
+      console.log(result.minArr, result.maxArr);
       /*
           if (array.length === 0) return null;
           const lastArray = array.length - 1;
