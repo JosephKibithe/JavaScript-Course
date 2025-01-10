@@ -6,12 +6,18 @@
   </head>
   <body>
     <script>
-      let i = 5;
-      while (i >= 0) {
+      /* let i = 0;
+      while (i <= 10) {
         console.log(i);
-        i--;
+        i = i + 2;
+      }*/
+      let arr = [1, 2, 3, 4, 5];
+      let incrArr = [];
+      for (let i = 0; i < arr.length; i++) {
+        incrArr[i] = arr[i] + 1;
       }
-      /* 
+      console.log(incrArr);
+      /*
           if (array.length === 0) return null;
           const lastArray = array.length - 1;
           return array[lastArray];
