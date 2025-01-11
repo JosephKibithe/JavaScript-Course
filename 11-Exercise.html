@@ -79,16 +79,17 @@
       if (!found) {
         console.log(-1);
       }*/
-      function findArray(arrays, words) {
-        for (let i = 0; i < arrays.length; i++) {
-          if (arrays[i] === words) {
-            return i;
+      function removeEggs(word) {
+        let result = [];
+        for (let i = 0; i < word.length; i++) {
+          if (word[i] !== "egg") {
+            result.push(word[i]);
           }
         }
-        return -1;
+        return result;
       }
-      const finnalresult = findArray(["green", "red", "yellow"], "gt");
-      console.log(finnalresult);
+      const result1 = removeEggs(["egg", "kettle", "egg", "juice"]);
+      console.log(result1);
     </script>
   </body>
 </html>
