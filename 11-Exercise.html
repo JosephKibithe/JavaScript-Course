@@ -10,7 +10,7 @@
       while (i <= 10) {
         console.log(i);
         i = i + 2;
-      }*/
+      }
       function minMax(arr) {
         //let arr = [];
         let minArr = arr[0];
@@ -49,8 +49,46 @@
         array[array.length - 1] = firstArr;
         return array;
       }
-      console.log(arraySwap([33, 34, 231]));*/
-      //console.log(i);
+      console.log(arraySwap([33, 34, 231]));
+      function countWords(words) {
+        let checkword = {}; //create an object to store word and numer pair
+
+        for (let i = 0; i < words.length; i++) {
+          const word = words[i]; //store words at each index in a variable word
+          if (checkword[word]) { //checks for words on each iteration and increamenrs object
+            checkword[word]++; //increament the counter
+          } else {
+            checkword[word] = 1; //initialises counter as 1
+          }
+        }
+        return checkword;
+      }
+      const result = countWords(["banana", "apple", "banana", "apple"]);
+      console.log(result);*/
+
+      /*let arrSearch = ["hello", "word", "search", "skip", "search"];
+      let wordtocheck = "search";
+      let found = false;
+      for (let i = 0; i < arrSearch.length; i++) {
+        if (arrSearch[i] === wordtocheck) {
+          console.log(i);
+          found = true;
+          break;
+        }
+      }
+      if (!found) {
+        console.log(-1);
+      }*/
+      function findArray(arrays, words) {
+        for (let i = 0; i < arrays.length; i++) {
+          if (arrays[i] === words) {
+            return i;
+          }
+        }
+        return -1;
+      }
+      const finnalresult = findArray(["green", "red", "yellow"], "gt");
+      console.log(finnalresult);
     </script>
   </body>
 </html>
