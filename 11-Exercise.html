@@ -15,6 +15,10 @@
         //let arr = [];
         let minArr = arr[0];
         let maxArr = arr[0];
+        if (arr.length == 0) {
+          minArr = null;
+          maxArr = null;
+        }
         for (let i = 0; i < arr.length; i++) {
           if (arr[i] < minArr) {
             minArr = arr[i];
@@ -25,6 +29,7 @@
         }
         return { minArr, maxArr };
       }
+
       const result = minMax([]);
       console.log("min:", result.minArr, "max:", result.maxArr);
       /*
