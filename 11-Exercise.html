@@ -81,10 +81,12 @@
       }*/
       function removeEggs(word) {
         let result = [];
+        let eggCount = 0;
         for (let i = 0; i < word.length; i++) {
-          if (word[i] !== "egg") {
-            result.push(word[i]);
-          }
+          if (word[i] === "egg" && eggCount < 2) {
+            eggCount++;
+            continue;
+          } else result.push(word[i]);
         }
         return result;
       }
