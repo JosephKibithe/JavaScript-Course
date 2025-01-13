@@ -83,6 +83,7 @@
         let result = [];
         let eggCount = 0;
         for (let i = 0; i < word.length; i++) {
+          result.reverse(word[i]);
           if (word[i] === "egg" && eggCount < 2) {
             eggCount++;
             continue;
@@ -90,7 +91,7 @@
         }
         return result;
       }
-      const result1 = removeEggs(["egg", "kettle", "egg", "juice"]);
+      const result1 = removeEggs(["egg", "kettle", "egg", "juice", "egg"]);
       console.log(result1);
     </script>
   </body>
