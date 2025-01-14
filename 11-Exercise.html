@@ -80,19 +80,18 @@
         console.log(-1);
       }*/
       function removeEggs(word) {
-        let result = [];
-        let eggCount = 0;
-        for (let i = 0; i < word.length; i++) {
-          result.reverse(word[i]);
-          if (word[i] === "egg" && eggCount < 2) {
-            eggCount++;
-            continue;
-          } else result.push(word[i]);
+        const wordCopy = [...word];
+        const reversedegg = wordCopy.reverse();
+        for (let i = 0; i < reversedegg.length; i++) {
+          if (reversedegg[i] === "egg") {
+            reversedegg.splice(i, 1);
+            i--;
+          }
         }
-        return result;
+        return reversedegg;
       }
-      const result1 = removeEggs(["egg", "kettle", "egg", "juice", "egg"]);
-      console.log(result1);
+      const result = removeEggs(["egg", "kettle", "egg", "juice", "egg"]);
+      console.log(result);
     </script>
   </body>
 </html>
