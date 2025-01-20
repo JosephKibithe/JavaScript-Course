@@ -1,4 +1,4 @@
-const todoList = ["watch tv", "clup hands"];
+const todoList = [""];
 
 renderTodoList();
 
