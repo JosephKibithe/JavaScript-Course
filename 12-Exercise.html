@@ -6,19 +6,14 @@
     <title>Document</title>
   </head>
   <body>
+    <button id="myButton">Click Me</button>
     <script>
-      const addd = function () {
-        console.log(3 + 2);
-      };
-
-      function runTwice(fun) {
-        fun();
-        fun();
-      }
-      runTwice(function () {
-        console.log("12b");
+      const buttonElement = document.getElementById("myButton");
+      buttonElement.addEventListener("click", () => {
+        setTimeout(() => {
+          buttonElement.innerText = "CLICKED";
+        }, 500);
       });
-      runTwice(addd);
     </script>
   </body>
 </html>
